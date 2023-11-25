@@ -1,0 +1,208 @@
+errup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ ./build_push_image.sh
+[+] Building 0.1s (2/2) FINISHED                                                                                                            docker:default
+ => ERROR [internal] load build definition from Dockerfile                                                                                            0.0s
+ => ERROR [internal] load .dockerignore                                                                                                               0.0s
+------
+ > [internal] load build definition from Dockerfile:
+------
+------
+ > [internal] load .dockerignore:
+------
+ERROR: failed to solve: failed to read dockerfile: failed to create lease: read-only file system
+REPOSITORY                        TAG         IMAGE ID       CREATED         SIZE
+myjenkins-blueocean               2.414.3-1   d503663e2744   4 weeks ago     777MB
+grafana/grafana                   latest      2fbe6143d3ba   4 weeks ago     399MB
+prom/prometheus                   latest      22010d1e5539   6 weeks ago     245MB
+docker                            dind        114405a05c1e   2 months ago    331MB
+busybox                           latest      a416a98b71e2   4 months ago    4.26MB
+docker/volumes-backup-extension   1.1.4       6872a696b721   5 months ago    119MB
+felipecruz/alpine-tar-zstd        latest      31988344315d   14 months ago   6.99MB
+justincormack/nsenter1            latest      c81481184b1b   5 years ago     101kB
+Error response from daemon: No such image: item-app:v1
+Error: Cannot perform an interactive login from a non TTY device
+The push refers to repository [docker.io/herrup/item-app]
+An image does not exist locally with the tag: herrup/item-app
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ ls
+Dockerfile  app.js  build_push_image.sh  gulpfile.js  package-lock.json  public  spec
+README.md   bin     docker-compose.yml   log.txt      package.json       routes  views
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ docker images
+REPOSITORY                        TAG         IMAGE ID       CREATED         SIZE
+myjenkins-blueocean               2.414.3-1   d503663e2744   4 weeks ago     777MB
+grafana/grafana                   latest      2fbe6143d3ba   4 weeks ago     399MB
+prom/prometheus                   latest      22010d1e5539   6 weeks ago     245MB
+docker                            dind        114405a05c1e   2 months ago    331MB
+busybox                           latest      a416a98b71e2   4 months ago    4.26MB
+docker/volumes-backup-extension   1.1.4       6872a696b721   5 months ago    119MB
+felipecruz/alpine-tar-zstd        latest      31988344315d   14 months ago   6.99MB
+justincormack/nsenter1            latest      c81481184b1b   5 years ago     101kB
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ docker-machine restart
+Command 'docker-machine' not found, but can be installed with:
+sudo snap install docker
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ sudo snap install docker
+docker 20.10.24 from Canonical✓ installed
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ docker-machine restart
+Command 'docker-machine' not found, but can be installed with:
+sudo snap install docker
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ ./build_push_image.sh
+[+] Building 153.3s (10/10) FINISHED                                                                                                        docker:default
+ => [internal] load build definition from Dockerfile                                                                                                  0.5s
+ => => transferring dockerfile: 737B                                                                                                                  0.0s
+ => [internal] load .dockerignore                                                                                                                     0.5s
+ => => transferring context: 89B                                                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                            4.3s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                           0.0s
+ => [internal] load build context                                                                                                                     0.6s
+ => => transferring context: 2.98MB                                                                                                                   0.5s
+ => [1/4] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                     90.9s
+ => => resolve docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                      0.1s
+ => => sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa 776B / 776B                                                            0.0s
+ => => sha256:1d12470fa662a2a5cb50378dcdc8ea228c1735747db410bbefb8e2d9144b5452 7.51kB / 7.51kB                                                        0.0s
+ => => sha256:2cafa3fbb0b6529ee4726b4f599ec27ee557ea3dea7019182323b3779959927f 2.21kB / 2.21kB                                                        0.0s
+ => => sha256:2ff1d7c41c74a25258bfa6f0b8adb0a727f84518f55f65ca845ebc747976c408 50.45MB / 50.45MB                                                     17.2s
+ => => sha256:b253aeafeaa7e0671bb60008df01de101a38a045ff7bc656e3b0fbfc7c05cca5 7.86MB / 7.86MB                                                        8.0s
+ => => sha256:3d2201bd995cccf12851a50820de03d34a17011dcbb9ac9fdf3a50c952cbb131 10.00MB / 10.00MB                                                     12.8s
+ => => sha256:1de76e268b103d05fa8960e0f77951ff54b912b63429c34f5d6adfd09f5f9ee2 51.88MB / 51.88MB                                                     37.3s
+ => => sha256:d9a8df5894511ce28a05e2925a75e8a4acbd0634c39ad734fdfba8e23d1b1569 191.85MB / 191.85MB                                                   73.8s
+ => => extracting sha256:2ff1d7c41c74a25258bfa6f0b8adb0a727f84518f55f65ca845ebc747976c408                                                             1.9s
+ => => sha256:6f51ee005deac0d99898e41b8ce60ebf250ebe1a31a0b03f613aec6bbc9b83d8 4.19kB / 4.19kB                                                       18.0s
+ => => sha256:5f32ed3c3f278edda4fc571c880b5277355a29ae8f52b52cdf865f058378a590 35.24MB / 35.24MB                                                     47.7s
+ => => extracting sha256:b253aeafeaa7e0671bb60008df01de101a38a045ff7bc656e3b0fbfc7c05cca5                                                             0.3s
+ => => extracting sha256:3d2201bd995cccf12851a50820de03d34a17011dcbb9ac9fdf3a50c952cbb131                                                             0.3s
+ => => extracting sha256:1de76e268b103d05fa8960e0f77951ff54b912b63429c34f5d6adfd09f5f9ee2                                                             4.8s
+ => => sha256:0c8cc2f24a4dcb64e602e086fc9446b0a541e8acd9ad72d2e90df3ba22f158b3 2.29MB / 2.29MB                                                       39.7s
+ => => sha256:0d27a8e861329007574c6766fba946d48e20d2c8e964e873de352603f22c4ceb 450B / 450B                                                           40.2s
+ => => extracting sha256:d9a8df5894511ce28a05e2925a75e8a4acbd0634c39ad734fdfba8e23d1b1569                                                            11.2s
+ => => extracting sha256:6f51ee005deac0d99898e41b8ce60ebf250ebe1a31a0b03f613aec6bbc9b83d8                                                             0.0s
+ => => extracting sha256:5f32ed3c3f278edda4fc571c880b5277355a29ae8f52b52cdf865f058378a590                                                             2.9s
+ => => extracting sha256:0c8cc2f24a4dcb64e602e086fc9446b0a541e8acd9ad72d2e90df3ba22f158b3                                                             0.1s
+ => => extracting sha256:0d27a8e861329007574c6766fba946d48e20d2c8e964e873de352603f22c4ceb                                                             0.0s
+ => [2/4] WORKDIR /app                                                                                                                                2.4s
+ => [3/4] COPY . .                                                                                                                                    0.2s
+ => [4/4] RUN npm install --production --unsafe-perm && npm run build                                                                                53.3s
+ => exporting to image                                                                                                                                1.3s
+ => => exporting layers                                                                                                                               1.2s
+ => => writing image sha256:5b39bd1bb715949ed9e6e3d1f42cb2cb9d2e0659b48dfaefdb5d4c50a34c58f8                                                          0.0s
+ => => naming to docker.io/library/item-app:v1                                                                                                        0.0s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+item-app     v1        5b39bd1bb715   2 seconds ago   949MB
+Error: Cannot perform an interactive login from a non TTY device
+The push refers to repository [docker.io/herrup/item-app]
+67dc2c4c7ef7: Pushed 
+c0d1935f30e4: Pushed 
+1caba4d5c66b: Pushed 
+0d5f5a015e5d: Mounted from library/node 
+3c777d951de2: Mounted from library/node 
+f8a91dd5fc84: Mounted from library/node 
+cb81227abde5: Mounted from library/node 
+e01a454893a9: Mounted from library/node 
+c45660adde37: Mounted from library/node 
+fe0fb3ab4a0f: Mounted from library/node 
+f1186e5061f2: Mounted from library/node 
+b2dba7477754: Mounted from library/node 
+v1: digest: sha256:fe3b959a06b75cb71d7c96a32b9b1fb06dc45cfef5e770a8df0bd9bb3ad8257c size: 2844
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ ./build_push_image.sh
+[+] Building 53.4s (10/10) FINISHED                                                                                                         docker:default
+ => [internal] load build definition from Dockerfile                                                                                                  0.3s
+ => => transferring dockerfile: 32B                                                                                                                   0.1s
+ => [internal] load .dockerignore                                                                                                                     0.3s
+ => => transferring context: 34B                                                                                                                      0.1s
+ => [internal] load metadata for docker.io/library/node:14                                                                                            2.5s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                           0.0s
+ => [internal] load build context                                                                                                                     0.5s
+ => => transferring context: 10.70kB                                                                                                                  0.5s
+ => [1/4] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                      0.0s
+ => CACHED [2/4] WORKDIR /app                                                                                                                         0.0s
+ => [3/4] COPY . .                                                                                                                                    0.8s
+ => [4/4] RUN npm install --production --unsafe-perm && npm run build                                                                                47.4s
+ => exporting to image                                                                                                                                1.4s
+ => => exporting layers                                                                                                                               1.3s
+ => => writing image sha256:5aa5573d4e5d25e1ad3cd421a3c92a4672dcd567ca616390b19245896bd03d4e                                                          0.0s 
+ => => naming to docker.io/library/item-app:v1                                                                                                        0.1s 
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+item-app          v1        5aa5573d4e5d   2 seconds ago   949MB
+herrup/item-app   v1        5b39bd1bb715   9 minutes ago   949MB
+Error: Cannot perform an interactive login from a non TTY device
+The push refers to repository [docker.io/herrup/item-app]
+60b6b29a2726: Pushed 
+c08225f03eed: Pushed 
+1caba4d5c66b: Layer already exists 
+0d5f5a015e5d: Layer already exists 
+3c777d951de2: Layer already exists 
+f8a91dd5fc84: Layer already exists 
+cb81227abde5: Layer already exists 
+e01a454893a9: Layer already exists 
+c45660adde37: Layer already exists 
+fe0fb3ab4a0f: Layer already exists 
+f1186e5061f2: Layer already exists 
+b2dba7477754: Layer already exists 
+v1: digest: sha256:6cd3c1fe79cf381f2fe21d4ec95d48004c6829029ae5e95aef7c3c322ee2cbb6 size: 2844
+herrup@HEZPRASTYO:/mnt/c/Users/bingo.HEZPRASTYO/dbsfcc/proyek-pertama$ docker compose up
+[+] Running 14/1
+ ✔ item-db 13 layers [⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                                                          45.8s 
+[+] Building 0.0s (0/0)                                                                                                                     docker:default
+[+] Running 4/4
+ ✔ Network proyek-pertama_default       Created                                                                                                       0.1s 
+ ✔ Volume "proyek-pertama_app-db"       Created                                                                                                       0.0s 
+ ✔ Container proyek-pertama-item-db-1   Created                                                                                                       1.6s 
+ ✔ Container proyek-pertama-item-app-1  Created                                                                                                       0.1s 
+Attaching to proyek-pertama-item-app-1, proyek-pertama-item-db-1
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=3bde1b1bd17f
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten] db version v3.6.23
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten] modules: none
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten] build environment:
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten]     distarch: x86_64
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.326+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true } }
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.327+0000 I STORAGE  [initandlisten] 
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.327+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.327+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+proyek-pertama-item-db-1   | 2023-11-25T16:50:06.327+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3438M,cache_overflow=(file_max=0M),session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.033+0000 I STORAGE  [initandlisten] WiredTiger message [1700931007:33612][1:0x7f777ad69a40], txn-recover: Set global recovery timestamp: 0
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I CONTROL  [initandlisten] 
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I CONTROL  [initandlisten] 
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I CONTROL  [initandlisten] 
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I CONTROL  [initandlisten] 
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.172+0000 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: c9d9ae9c-864c-4629-95cc-07753857f3c2
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.252+0000 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.6
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.252+0000 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: d080ec01-38a6-44a9-be09-1aaeefae6d33
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.364+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.365+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.365+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.365+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.365+0000 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: 82cb0d2d-1c51-42b3-b1ff-d84d1bc16668
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.496+0000 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", ns: "config.system.sessions", expireAfterSeconds: 1800 }
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.496+0000 I INDEX    [LogicalSessionCacheRefresh]        building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.498+0000 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.498+0000 I COMMAND  [LogicalSessionCacheRefresh] command config.$cmd command: createIndexes { createIndexes: "system.sessions", indexes: [ { key: { lastUse: 1 }, name: "lsidTTLIndex", expireAfterSeconds: 1800 } ], $db: "config" } numYields:0 reslen:98 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_msg 132ms
+proyek-pertama-item-app-1  | 
+proyek-pertama-item-app-1  | > docker-software-delivery@1.0.0 start /app
+proyek-pertama-item-app-1  | > node ./bin/www
+proyek-pertama-item-app-1  | 
+proyek-pertama-item-app-1  | NODE_ENV: production
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.965+0000 I NETWORK  [listener] connection accepted from 172.19.0.3:41168 #1 (1 connection now open)
+proyek-pertama-item-db-1   | 2023-11-25T16:50:07.976+0000 I NETWORK  [conn1] received client metadata from 172.19.0.3:41168 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "5.15.133.1-microsoft-standard-WSL2" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }
+proyek-pertama-item-app-1  | Connected to database
+proyek-pertama-item-app-1  | GET / 200 405.447 ms - 785
+proyek-pertama-item-app-1  | GET /javascripts/dist/dist.min.js 200 5.258 ms - 186999
+proyek-pertama-item-app-1  | GET /stylesheets/style.css 200 72.944 ms - 519
+proyek-pertama-item-app-1  | GET /favicon.ico 404 25.791 ms - 270
+proyek-pertama-item-app-1  | GET /api 200 26.514 ms - 2
+proyek-pertama-item-db-1   | 2023-11-25T16:50:26.924+0000 I STORAGE  [conn1] createCollection: accumulator.documents with generated UUID: 0e0db62b-903e-4ddd-b4f4-c0420a57e839
+proyek-pertama-item-app-1  | POST /api 201 69.511 ms - 53
+proyek-pertama-item-app-1  | POST /api 201 2.289 ms - 53
